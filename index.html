@@ -8,6 +8,9 @@
             <h1>
                 {{message}}
             </h1>
+            <h1>
+                {{GetMessageWithUpperCase(message)}}
+            </h1>
             <h2>
                 Luck Number: {{luckyNumber}}
             </h2>
@@ -62,6 +65,11 @@
                     return value;
                 }
 
+                function GetMessageWithUpperCase(message){
+                    return message.toUpperCase();
+                }
+
+
                 return {
                     message,
                     luckyNumber,
@@ -69,7 +77,8 @@
                     employee,
                     min,
                     max,
-                    GetRandomNumberFrom1To20000
+                    GetRandomNumberFrom1To20000,
+                    GetMessageWithUpperCase
                 }
             }
         }).mount("#app");
