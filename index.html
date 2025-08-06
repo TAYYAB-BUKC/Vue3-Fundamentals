@@ -8,15 +8,21 @@
             <h1>
                 {{message}}
             </h1>
+            <h2>
+                Luck Number: {{luckyNumber}}
+            </h2>
         </div>
     </body>
     <script>
         const {createApp} = Vue;
 
         createApp({
-            setup(){
+            setup(){                
+                const message = 'Hello From Vue 3!';
+                const luckyNumber = 7;
                 return {
-                    message: 'Hello From Vue 3'
+                    message,
+                    luckyNumber
                 }
             }
         }).mount("#app");
