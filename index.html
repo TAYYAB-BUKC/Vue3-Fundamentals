@@ -32,6 +32,9 @@
             <p>
                 Random number from 10-20: {{Math.ceil(Math.random() * (20-10)) + 10}}.
             </p>
+            <p>
+                Random number using Function from 1-20000: {{GetRandomNumberFrom1To20000(min,max)}}.
+            </p>
         </div>
     </body>
     <script>
@@ -47,11 +50,26 @@
                     age: 30,
                     salary: 500000
                 }
+                
+                const min = 1, max = 20000;
+
+                function GetRandomNumberFrom1To20000(min, max){
+                    console.log((min));
+                    console.log((max));
+                    console.log((max-min));
+                    var value = Math.ceil(Math.random() * (max-min));
+                    console.log(value);
+                    return value;
+                }
+
                 return {
                     message,
                     luckyNumber,
                     luckyNumbers,
-                    employee
+                    employee,
+                    min,
+                    max,
+                    GetRandomNumberFrom1To20000
                 }
             }
         }).mount("#app");
