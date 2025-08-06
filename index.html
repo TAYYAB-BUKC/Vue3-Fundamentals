@@ -56,7 +56,7 @@
                 
                 const min = 1, max = 20000;
 
-                function GetRandomNumberFrom1To20000(min, max){
+                function GetRandomNumberFrom1To20000(min, max){                    
                     console.log((min));
                     console.log((max));
                     console.log((max-min));
@@ -70,7 +70,10 @@
                 }
 
                 onMounted(() => {
-                    luckyNumber.value = GetRandomNumberFrom1To20000(min, max);
+                    let value = GetRandomNumberFrom1To20000(min, max);
+                    setTimeout(function (){
+                        luckyNumber.value = value;
+                    }, 2500);
                 })
 
                 return {
