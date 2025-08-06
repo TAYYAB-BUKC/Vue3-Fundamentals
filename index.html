@@ -36,12 +36,12 @@
                 Random number from 10-20: {{Math.ceil(Math.random() * (20-10)) + 10}}.
             </p>
             <p>
-                Random number using Function from 1-20000: {{GetRandomNumberFrom1To20000(min,max)}}.
+                Random number using Function from 1-20000: {{luckyNumber}}.
             </p>
         </div>
     </body>
     <script>
-        const {createApp, ref} = Vue;
+        const {createApp, ref, onMounted} = Vue;
 
         createApp({
             setup(){                
@@ -61,7 +61,6 @@
                     console.log((max));
                     console.log((max-min));
                     var value = Math.ceil(Math.random() * (max-min));
-                    luckyNumber.value = value;
                     console.log(value);
                     return value;
                 }
@@ -70,6 +69,9 @@
                     return message.toUpperCase();
                 }
 
+                onMounted(() => {
+                    luckyNumber.value = GetRandomNumberFrom1To20000(min, max);
+                })
 
                 return {
                     message,
