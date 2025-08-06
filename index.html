@@ -11,6 +11,9 @@
             <h2>
                 Luck Number: {{luckyNumber}}
             </h2>
+            <h5>
+                Luck Number is an {{luckyNumber % 2 == 0 ? "Even Number": "Odd Number"}}
+            </h5>
             <p>
                 Lucky Numbers: {{luckyNumbers}}
             </p>
@@ -22,6 +25,12 @@
             </p>
             <p>
                 Employee with named {{employee.name}} is {{employee.age}} years old.
+            </p>
+            <p>
+                Random number from 1-10: {{Math.floor(Math.random() * 10) + 1}}.
+            </p>
+            <p>
+                Random number from 10-20: {{Math.ceil(Math.random() * (20-10)) + 10}}.
             </p>
         </div>
     </body>
