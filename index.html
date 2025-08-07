@@ -63,7 +63,7 @@
 
             <p>Employee's projects in pipeline</p>
             <ul>
-                <li v-for="project in employee.projects">
+                <li v-for="project in employee.projects" :key="project.id">
                     {{project.id}} - {{project.name}} has timeline of {{project.timeline}}
                     <input type="text" />
                 </li>
