@@ -2,9 +2,32 @@
 <html>
     <head>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <style>
+            .h1{
+                font-size: 30px;
+                color: green;
+            }
+
+            .h2{
+                font-size: 40px;
+                color: chocolate;
+            }
+
+            .bg-grey{
+                background-color: grey;
+            }
+
+            .bg-green{
+                background-color: green;
+            } 
+            
+            .pd-medium{
+                padding: 20px;
+            }
+        </style>
     </head>
     <body>
-        <div id="app">
+        <div id="app" class="pd-medium">
             <h1 style="background-color: aqua; font-size: 40px;">
                 {{message}}
             </h1>
@@ -56,7 +79,7 @@
             <p>
                 Random number from 10-20: {{Math.ceil(Math.random() * (20-10)) + 10}}.
             </p>
-            <p>
+            <p class="pd-medium" v-bind:class="{h1:true, 'bg-grey':true}">
                 Random number using Function from 1-20000: {{luckyNumber}}.
             </p>
             <a v-bind:href="googleURL">Visit Google</a>
