@@ -22,7 +22,7 @@
                 Lucky Numbers: {{luckyNumbers}}
             </p>
             <p v-for="(luckyNumber, index) in luckyNumbers">
-                {{++index}}) Lucky Number: {{luckyNumber}}
+                {{++index}}) Lucky Number: <span v-once>{{luckyNumber}}</span>
             </p>
             <p>
                 Employee Details:
