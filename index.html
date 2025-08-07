@@ -8,9 +8,7 @@
             <h1>
                 {{message}}
             </h1>
-            <h1>
-                {{GetMessageWithUpperCase(message)}}
-            </h1>
+            <span v-html="GetMessageWithUpperCase(message)"></span>
             <h2>
                 Luck Number: {{luckyNumber}}
             </h2>
@@ -66,7 +64,7 @@
                 }
 
                 function GetMessageWithUpperCase(message){
-                    return message.toUpperCase();
+                    return `<h1><u>${message.toUpperCase()}</u></h1>`;
                 }
 
                 function UpdateEmployeeDetails(){
