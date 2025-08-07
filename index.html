@@ -113,6 +113,9 @@
             </ul>
 
             <button v-on:click="ButtonClick">Click Me!!!</button>
+            <br>
+            <br/>
+            <button v-on:click="ButtonClickWithMessage('Great! you clicked me with parameters!!!')">Click Me With Parameters!!!</button>
         </div>
     </body>
     <script>
@@ -195,6 +198,10 @@
                     alert('Great! you clicked me!!!');
                 }
 
+                function ButtonClickWithMessage(message){
+                    alert(message);
+                }
+
                 return {
                     message,
                     luckyNumber,
@@ -209,7 +216,8 @@
                     IsMainTitle,
                     HasGreenBackground,
                     styles,
-                    ButtonClick
+                    ButtonClick,
+                    ButtonClickWithMessage
                 }
             }
         }).mount("#app");
