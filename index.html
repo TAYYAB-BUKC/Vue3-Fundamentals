@@ -31,7 +31,10 @@
                 Employee with named {{employee.name}} is {{employee.age}} years old.
             </p>
             <p v-show="employee.hasCorporateCard">
-                Spending limit of Employee card  is {{employee.cardSpendingLimit}}.
+                V-SHOW: Spending limit of Employee card is {{employee.cardSpendingLimit}}.
+            </p>
+            <p v-if="employee.hasCorporateCard">
+                V-IF: Spending limit of Employee card is {{employee.cardSpendingLimit}}.
             </p>
             <p>
                 Random number from 1-10: {{Math.floor(Math.random() * 10) + 1}}.
@@ -58,7 +61,7 @@
                     name: "John",
                     age: 30,
                     salary: 500000,
-                    hasCorporateCard: true,
+                    hasCorporateCard: false,
                     cardSpendingLimit: 250000,
                     yearsWithCompany: 10
                 });
