@@ -120,6 +120,11 @@
                 This particualr div is exciting!!!!
                 <br>
                 <br>
+                <a :href="googleURL"
+                    v-on:click.prevent="ButtonClickWithMessage('Great! you clicked me with parameters FROM LINK!!!', $event)"
+                >Visit Google With Prevent Only</a>
+                <br>
+                <br>
                 <button id="BtnWithParams" v-on:click.stop="ButtonClickWithMessage('Great! you clicked me with parameters!!!', $event)">Click Me With Parameters!!!</button>
                 <br>
                 <br/>
