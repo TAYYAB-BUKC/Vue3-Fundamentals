@@ -111,6 +111,8 @@
                     <input type="text" />
                 </li>
             </ul>
+
+            <button v-on:click="ButtonClick">Click Me!!!</button>
         </div>
     </body>
     <script>
@@ -189,6 +191,10 @@
                     return true;
                 }
 
+                function ButtonClick(){
+                    alert('Great! you clicked me!!!');
+                }
+
                 return {
                     message,
                     luckyNumber,
@@ -202,7 +208,8 @@
                     fontSize,
                     IsMainTitle,
                     HasGreenBackground,
-                    styles
+                    styles,
+                    ButtonClick
                 }
             }
         }).mount("#app");
