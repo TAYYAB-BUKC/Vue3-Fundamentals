@@ -55,6 +55,13 @@
                 Random number using Function from 1-20000: {{luckyNumber}}.
             </p>
             <a v-bind:href="googleURL">Visit Google</a>
+
+            <p>Employee's projects in pipeline</p>
+            <ul>
+                <li v-for="project in employee.projects">
+                    {{project.id}} - {{project.name}} has timeline of {{project.timeline}}
+                </li>
+            </ul>
         </div>
     </body>
     <script>
@@ -74,12 +81,12 @@
                     cardSpendingLimit: 250000,
                     yearsWithCompany: 2.5,
                     projects:[
-                        { Id: "1", Name: "Project A", timeline: "2 years"  },
-                        { Id: "2", Name: "Project B", timeline: "2 months"  },
-                        { Id: "3", Name: "Project C", timeline: "5 months"  },
-                        { Id: "4", Name: "Project D", timeline: "3.2 years"  },
-                        { Id: "5", Name: "Project E", timeline: "9 month"  },
-                        { Id: "6", Name: "Project F", timeline: "1 year"  },
+                        { id: "1", name: "Project A", timeline: "2 years"  },
+                        { id: "2", name: "Project B", timeline: "2 months"  },
+                        { id: "3", name: "Project C", timeline: "5 months"  },
+                        { id: "4", name: "Project D", timeline: "3.2 years"  },
+                        { id: "5", name: "Project E", timeline: "9 month"  },
+                        { id: "6", name: "Project F", timeline: "1 year"  },
                     ]
                 });
                 
