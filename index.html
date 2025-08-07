@@ -36,8 +36,11 @@
             <p v-if="employee.hasCorporateCard">
                 V-IF: Spending limit of Employee card is {{employee.cardSpendingLimit}}.
             </p>
+            <p v-else-if="employee.salary > 250000 && employee.yearsWithCompany > 3">
+                V-ELSEIF: Employee is eligible for a Corporate card.
+            </p>
             <p v-else>
-                V-ELSE: Employee card does not a Corporate card.
+                V-ELSE: Employee does not have a Corporate card.
             </p>
             <p>
                 Random number from 1-10: {{Math.floor(Math.random() * 10) + 1}}.
@@ -66,7 +69,7 @@
                     salary: 500000,
                     hasCorporateCard: false,
                     cardSpendingLimit: 250000,
-                    yearsWithCompany: 10
+                    yearsWithCompany: 2.5
                 });
                 
                 const min = 1, max = 20000;
