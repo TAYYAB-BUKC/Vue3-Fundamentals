@@ -9,10 +9,10 @@
                 {{message}}
             </h1>
             <span v-html="GetMessageWithUpperCase(message)"></span>
-            <h2 v-bind:style="{backgroundColor: 'aqua', fontSize: '40px'}">
+            <h2 v-bind:style="{backgroundColor: 'aqua', fontSize: fontSize}">
                 Luck Number: {{luckyNumber}}
             </h2>
-            <h2 v-once v-bind:style="{'background-color': 'aqua', 'font-size': '40px'}">
+            <h2 v-once v-bind:style="{'background-color': 'aqua', 'font-size': fontSize}">
                 Render Once Luck Number: {{luckyNumber}}
             </h2>
             <h5>
@@ -97,6 +97,7 @@
                 });
                 
                 const min = 1, max = 20000;
+                const fontSize = '40px';
 
                 function GetRandomNumberFrom1To20000(min, max){                    
                     console.log((min));
@@ -141,7 +142,8 @@
                     max,
                     GetRandomNumberFrom1To20000,
                     GetMessageWithUpperCase,
-                    googleURL
+                    googleURL,
+                    fontSize
                 }
             }
         }).mount("#app");
