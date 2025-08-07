@@ -39,6 +39,7 @@
             <p>
                 Random number using Function from 1-20000: {{luckyNumber}}.
             </p>
+            <a v-bind:href="googleURL">Visit Google</a>
         </div>
     </body>
     <script>
@@ -47,6 +48,7 @@
         createApp({
             setup(){                
                 const message = 'Hello From Vue 3!';
+                const googleURL = 'https://google.com';
                 let luckyNumber = ref(7);
                 const luckyNumbers = [1,3,5,6,7,9,10];
                 const employee = reactive({
@@ -91,7 +93,8 @@
                     min,
                     max,
                     GetRandomNumberFrom1To20000,
-                    GetMessageWithUpperCase
+                    GetMessageWithUpperCase,
+                    googleURL
                 }
             }
         }).mount("#app");
