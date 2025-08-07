@@ -120,7 +120,7 @@
                 This particualr div is exciting!!!!
                 <br>
                 <br>
-                <input type="text" v-on:keyup.enter="KeyPressed($event)" />
+                <input type="text" v-on:keyup.enter.ctrl="KeyPressed($event)" />
                 <br>
                 <br>
                 <a :href="googleURL"
@@ -231,7 +231,7 @@
                 const XAxis = ref(0), YAxis = ref(0);
 
                 function KeyPressed(){
-                    console.log("ENTER KEY was pressed");
+                    console.log("CTRL+ENTER KEY was pressed");
                 }
 
                 return {
