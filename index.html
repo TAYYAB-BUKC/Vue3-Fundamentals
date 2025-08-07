@@ -13,6 +13,11 @@
                 color: chocolate;
             }
 
+            .h3{
+                font-size: 40px;
+                color: brown;
+            }
+
             .bg-grey{
                 background-color: grey;
             }
@@ -82,6 +87,18 @@
             <p class="pd-medium" v-bind:class="{h1:true, 'bg-grey':true}">
                 Random number using Function from 1-20000: {{luckyNumber}}.
             </p>
+            <p class="pd-medium" v-bind:class="{h2:IsMainTitle, 'bg-green':HasGreenBackground}">
+                Random number using Function from 1-20000: {{luckyNumber}}.
+            </p>
+
+            <p class="pd-medium" v-bind:class="styles">
+                Random number using Function from 1-20000: {{luckyNumber}}.
+            </p>
+
+            <p class="pd-medium" v-bind:class="IsMainTitle() ? styles : ''">
+                Conditional Styles: Random number using Function from 1-20000: {{luckyNumber}}.
+            </p>
+
             <a v-bind:href="googleURL">Visit Google</a>
 
             <p>Employee's projects in pipeline</p>
@@ -122,6 +139,11 @@
                 const min = 1, max = 20000;
                 const fontSize = '40px';
 
+                const styles = {
+                    h3:IsMainTitle(),
+                    'bg-green':HasGreenBackground
+                };
+
                 function GetRandomNumberFrom1To20000(min, max){                    
                     console.log((min));
                     console.log((max));
@@ -156,6 +178,14 @@
                     employee.projects.sort(()=>Math.random()-0.5);
                 }
 
+                function IsMainTitle(){
+                    return false;
+                }
+
+                function HasGreenBackground(){
+                    return true;
+                }
+
                 return {
                     message,
                     luckyNumber,
@@ -166,7 +196,10 @@
                     GetRandomNumberFrom1To20000,
                     GetMessageWithUpperCase,
                     googleURL,
-                    fontSize
+                    fontSize,
+                    IsMainTitle,
+                    HasGreenBackground,
+                    styles
                 }
             }
         }).mount("#app");
