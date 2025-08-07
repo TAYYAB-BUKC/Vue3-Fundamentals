@@ -65,6 +65,7 @@
             <ul>
                 <li v-for="project in employee.projects">
                     {{project.id}} - {{project.name}} has timeline of {{project.timeline}}
+                    <input type="text" />
                 </li>
             </ul>
         </div>
@@ -121,7 +122,15 @@
                         UpdateEmployeeDetails();
                         luckyNumber.value = value;
                     }, 2500);
+
+                    setTimeout(function (){
+                        ShuffleEmployeesProjectOrder();
+                    }, 10000);
                 })
+                
+                function ShuffleEmployeesProjectOrder(){
+                    employee.projects.sort(()=>Math.random()-0.5);
+                }
 
                 return {
                     message,
