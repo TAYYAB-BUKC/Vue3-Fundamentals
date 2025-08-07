@@ -30,6 +30,9 @@
             <p>
                 Employee with named {{employee.name}} is {{employee.age}} years old.
             </p>
+            <p v-show="employee.hasCorporateCard">
+                Spending limit of Employee card  is {{employee.cardSpendingLimit}}.
+            </p>
             <p>
                 Random number from 1-10: {{Math.floor(Math.random() * 10) + 1}}.
             </p>
