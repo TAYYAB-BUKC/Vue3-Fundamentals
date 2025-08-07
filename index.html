@@ -5,14 +5,14 @@
     </head>
     <body>
         <div id="app">
-            <h1>
+            <h1 style="background-color: aqua; font-size: 40px;">
                 {{message}}
             </h1>
             <span v-html="GetMessageWithUpperCase(message)"></span>
-            <h2>
+            <h2 v-bind:style="{backgroundColor: 'aqua', fontSize: '40px'}">
                 Luck Number: {{luckyNumber}}
             </h2>
-            <h2 v-once>
+            <h2 v-once v-bind:style="{'background-color': 'aqua', 'font-size': '40px'}">
                 Render Once Luck Number: {{luckyNumber}}
             </h2>
             <h5>
