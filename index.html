@@ -120,6 +120,9 @@
                 This particualr div is exciting!!!!
                 <br>
                 <br>
+                <input type="text" v-on:keyup.enter="KeyPressed($event)" />
+                <br>
+                <br>
                 <a :href="googleURL"
                     v-on:click.prevent="ButtonClickWithMessage('Great! you clicked me with parameters FROM LINK!!!', $event)"
                 >Visit Google With Prevent Only</a>
@@ -227,6 +230,10 @@
                 
                 const XAxis = ref(0), YAxis = ref(0);
 
+                function KeyPressed(){
+                    console.log("ENTER KEY was pressed");
+                }
+
                 return {
                     message,
                     luckyNumber,
@@ -244,7 +251,8 @@
                     ButtonClick,
                     ButtonClickWithMessage,
                     XAxis,
-                    YAxis
+                    YAxis,
+                    KeyPressed
                 }
             }
         }).mount("#app");
