@@ -115,11 +115,17 @@
             <button v-on:click="ButtonClick">Click Me!!!</button>
             <br>
             <br/>
-            <button id="BtnWithParams" v-on:click="ButtonClickWithMessage('Great! you clicked me with parameters!!!', $event)">Click Me With Parameters!!!</button>
-            <br>
-            <br/>
-            <p> x-axis of BtnWithParams: {{XAxis}} </p>
-            <p> y-axis of BtnWithParams: {{YAxis}} </p>
+            
+            <div v-on:click="ButtonClickWithMessage('Great! you clicked me with parameters From DIV!!!', $event)">
+                This particualr div is exciting!!!!
+                <br>
+                <br>
+                <button id="BtnWithParams" v-on:click.stop="ButtonClickWithMessage('Great! you clicked me with parameters!!!', $event)">Click Me With Parameters!!!</button>
+                <br>
+                <br/>
+                <p> x-axis of BtnWithParams: {{XAxis}} </p>
+                <p> y-axis of BtnWithParams: {{YAxis}} </p>
+            </div>
         </div>
     </body>
     <script>
