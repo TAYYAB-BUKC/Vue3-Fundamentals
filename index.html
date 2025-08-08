@@ -158,6 +158,8 @@
                 <br>
                 <br>
                 <button v-on:click="counter--">Decrement</button>
+                <br>
+                <input style="margin-top: 10px;" type="text" v-model="employee.name" />
             </div>
         </div>
     </body>
@@ -262,8 +264,12 @@
                 //     return `${employee.name} ${employee.lastName}`;
                 // }
 
-                const getFullName = computed(() =>{
+                const getFullName = computed((previousValue) =>{
+                    console.log(`previousValue: ${previousValue}`);
                     console.log("getFullName was called");
+                    if(previousValue == 'John 1 Doe'){
+                        console.log("John 1 ---> special case called");
+                    }
                     return `${employee.name} ${employee.lastName}`;
                 });
 
