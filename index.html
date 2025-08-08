@@ -148,6 +148,16 @@
                 <br>
                 <p>{{employee.name}} is {{employee.age}} years old.</p>
             </div>
+
+            <div>
+                <p>{{counter}}</p>
+                <p>{{getFullName()}}</p>
+                <br>
+                <button v-on:click="counter++">Increment</button>
+                <br>
+                <br>
+                <button v-on:click="counter--">Decrement</button>
+            </div>
         </div>
     </body>
     <script>
@@ -161,6 +171,7 @@
                 const luckyNumbers = [1,3,5,6,7,9,10];
                 const employee = reactive({
                     name: "John",
+                    lastName: "Doe",
                     age: "30 years",
                     salary: 500000,
                     hasCorporateCard: false,
@@ -243,6 +254,13 @@
                     console.log("CTRL+ENTER KEY was pressed");
                 }
 
+                const counter = ref(0);
+
+                function getFullName(){
+                    console.log("getFullName was called");
+                    return `${employee.name} ${employee.lastName}`;
+                }
+
                 return {
                     message,
                     luckyNumber,
@@ -261,7 +279,9 @@
                     ButtonClickWithMessage,
                     XAxis,
                     YAxis,
-                    KeyPressed
+                    KeyPressed,
+                    counter,
+                    getFullName
                 }
             }
         }).mount("#app");
