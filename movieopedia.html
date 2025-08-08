@@ -23,7 +23,10 @@
                 </div>
                 <div class="border p-3 w-100 mx-auto">
                 <div class="text-center">
-                    <h4 class="text-center">Movie List</h4>
+                    <h2 class="text-center">Movie List</h2>
+                    <h3 class="text-danger" v-if="movies.length > 6">
+                        You can only add 10 movies.
+                    </h3>
                     <hr />
                 </div>
                 <ul class="list-group">
