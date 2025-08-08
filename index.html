@@ -144,7 +144,7 @@
                 <input type="text" v-model.trim="employee.name" />
                 <br>
                 <br>
-                <input type="number" v-model.lazy="employee.age" />
+                <input type="number" v-model.lazy.number="employee.age" />
                 <br>
                 <p>{{employee.name}} is {{employee.age}} years old.</p>
             </div>
@@ -161,7 +161,7 @@
                 const luckyNumbers = [1,3,5,6,7,9,10];
                 const employee = reactive({
                     name: "John",
-                    age: 30,
+                    age: "30 years",
                     salary: 500000,
                     hasCorporateCard: false,
                     cardSpendingLimit: 250000,
