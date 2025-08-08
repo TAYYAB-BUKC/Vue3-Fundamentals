@@ -40,6 +40,7 @@
 
         createApp({
             setup(){                
+                let maxMovieCount = ref(7);
                 let movies= reactive([
                     { id: 1, title: "Movie 1", year: 2020 },
                     { id: 2, title: "Movie 2", year: 2021 },
@@ -59,15 +60,25 @@
                     let movie = {
                         id: newID, title: newMovie.title, year: newMovie.year
                     }
-                    movies.push(movie);
-                    newMovie.id = 0;
-                    newMovie.title = '';
-                    newMovie.year = '';
+                    maxMovieCount.value++;
+                    if(maxMovieCount.value < 11){
+                        movies.push(movie);
+                        newMovie.id = 0;
+                        newMovie.title = '';
+                        newMovie.year = '';
+                    }
                 }
 
                 function RemoveMovie(){
                     movies.pop();
                 }
+
+                watch(()=> maxMovieCount.value, (newValue, OldValue)=>{
+                    console.log(`maxMovieCount Counter value changed from ${OldValue} to ${newValue}`);
+                    if(newValue > 10){
+                        alert(`Max Movie collection limit reached that is 10.`);
+                    }
+                });
 
                 return {
                     movies,
