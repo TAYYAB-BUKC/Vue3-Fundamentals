@@ -139,6 +139,15 @@
                 <p> x-axis of BtnWithParams: {{XAxis}} </p>
                 <p> y-axis of BtnWithParams: {{YAxis}} </p>
             </div>
+
+            <div>
+                <input type="text" v-model="employee.name" />
+                <br>
+                <br>
+                <input type="number" v-model="employee.age" />
+                <br>
+                <p>{{employee.name}} is {{employee.age}} years old.</p>
+            </div>
         </div>
     </body>
     <script>
