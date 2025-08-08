@@ -144,7 +144,7 @@
                 <input type="text" v-model.trim="employee.name" />
                 <br>
                 <br>
-                <input type="number" v-model="employee.age" />
+                <input type="number" v-model.lazy="employee.age" />
                 <br>
                 <p>{{employee.name}} is {{employee.age}} years old.</p>
             </div>
