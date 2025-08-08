@@ -57,12 +57,13 @@
 
                 function AddMovie(){
                     var newID = movies == null || movies == undefined ? 1 : movies.at(-1).id + 1;
-                    let movie = {
-                        id: newID, title: newMovie.title, year: newMovie.year
-                    }
+                    // let movie = {
+                    //     id: newID, title: newMovie.title, year: newMovie.year
+                    // }
+                    newMovie.id = newID;
                     maxMovieCount.value++;
                     if(maxMovieCount.value < 11){
-                        movies.push(movie);
+                        movies.push({...newMovie});
                         newMovie.id = 0;
                         newMovie.title = '';
                         newMovie.year = '';
