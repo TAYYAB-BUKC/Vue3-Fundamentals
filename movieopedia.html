@@ -97,9 +97,11 @@
                     });
                 });
 
-                watch(movies, ()=>{
+                watch(movies, async ()=>{
                     if(movies.length > 6){
-                        showMessage.value = true;
+                        setTimeout(() => {
+                            showMessage.value = true;
+                        }, 3000);                        
                     }else{
                         showMessage.value = false;
                     }
