@@ -19,7 +19,7 @@
                 </div>
                 <div class="text-center pb-3">
                 <button class="btn btn-secondary m-2 w-25" v-on:click="AddMovie">Add Movie</button>
-                <button class="btn btn-danger m-2 w-25">Remove Movie</button>
+                <button class="btn btn-danger m-2 w-25" v-on:click="RemoveMovie">Remove Movie</button>
                 </div>
                 <div class="border p-3 w-100 mx-auto">
                 <div class="text-center">
@@ -65,10 +65,15 @@
                     newMovie.year = '';
                 }
 
+                function RemoveMovie(){
+                    movies.pop();
+                }
+
                 return {
                     movies,
                     newMovie,
-                    AddMovie
+                    AddMovie,
+                    RemoveMovie
                 }
             }
         }).mount("#app");
