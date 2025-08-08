@@ -151,7 +151,8 @@
 
             <div>
                 <p>{{counter}}</p>
-                <p>{{getFullName()}}</p>
+                <!-- <p>{{getFullName()}}</p> -->
+                <p>{{getFullName}}</p>
                 <br>
                 <button v-on:click="counter++">Increment</button>
                 <br>
@@ -161,7 +162,7 @@
         </div>
     </body>
     <script>
-        const {createApp, ref, onMounted, reactive} = Vue;
+        const {createApp, ref, onMounted, reactive, computed} = Vue;
 
         createApp({
             setup(){                
@@ -256,10 +257,15 @@
 
                 const counter = ref(0);
 
-                function getFullName(){
+                // function getFullName(){
+                //     console.log("getFullName was called");
+                //     return `${employee.name} ${employee.lastName}`;
+                // }
+
+                const getFullName = computed(() =>{
                     console.log("getFullName was called");
                     return `${employee.name} ${employee.lastName}`;
-                }
+                });
 
                 return {
                     message,
