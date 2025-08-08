@@ -164,7 +164,7 @@
         </div>
     </body>
     <script>
-        const {createApp, ref, onMounted, reactive, computed} = Vue;
+        const {createApp, ref, onMounted, reactive, computed, watch} = Vue;
 
         createApp({
             setup(){                
@@ -271,6 +271,13 @@
                         console.log("John 1 ---> special case called");
                     }
                     return `${employee.name} ${employee.lastName}`;
+                });
+
+                watch(()=> counter.value, (newValue, OldValue)=>{
+                    console.log(`Counter value changed from ${OldValue} to ${newValue}`);
+                    if(newValue == 5){
+                        alert('Counter value is 5 now');
+                    }
                 });
 
                 return {
