@@ -161,6 +161,14 @@
                 <br>
                 <input style="margin-top: 10px;" type="text" v-model="employee.name" />
             </div>
+
+            <div>
+                <p>Reactive Counter: {{obj.count}}</p>
+                <button v-on:click="obj.count++">Reactive Increment</button>
+                <br>
+                <br>
+                <button v-on:click="obj.count--">Reactive Decrement</button>
+            </div>
         </div>
     </body>
     <script>
@@ -280,6 +288,14 @@
                     }
                 });
 
+                var obj = reactive({count:0});
+                
+                watch(()=> obj.count, (newValue, OldValue)=>{
+                    console.log(`Reactive Counter value changed from ${OldValue} to ${newValue}`);
+                    if(newValue == 5){
+                        alert('Reactive Counter value is 5 now');
+                    }
+                });
                 return {
                     message,
                     luckyNumber,
@@ -300,7 +316,8 @@
                     YAxis,
                     KeyPressed,
                     counter,
-                    getFullName
+                    getFullName,
+                    obj
                 }
             }
         }).mount("#app");
