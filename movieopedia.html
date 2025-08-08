@@ -30,7 +30,7 @@
                     <hr />
                 </div>
                 <ul class="list-group">
-                    <li v-for="movie in GetAllMovies()" class="list-group-item">
+                    <li v-for="movie in GetAllMovies" class="list-group-item">
                         {{ movie }}
                     </li>
                 </ul>
@@ -84,11 +84,17 @@
                     }
                 });
 
-                function GetAllMovies(){
+                // function GetAllMovies(){
+                //     return movies.map((movie)=>{
+                //         return `${movie.title} was release in ${movie.year}.`;
+                //     });
+                // }
+
+                const GetAllMovies = computed(() =>{
                     return movies.map((movie)=>{
                         return `${movie.title} was release in ${movie.year}.`;
                     });
-                }
+                });
 
                 return {
                     movies,
