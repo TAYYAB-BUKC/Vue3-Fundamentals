@@ -24,7 +24,7 @@
                 <div class="border p-3 w-100 mx-auto">
                 <div class="text-center">
                     <h2 class="text-center">Movie List</h2>
-                    <h3 class="text-danger" v-if="movies.length > 6">
+                    <h3 class="text-danger" v-if="showMessage">
                         You can only add 10 movies.
                     </h3>
                     <hr />
@@ -44,6 +44,7 @@
         createApp({
             setup(){                
                 let maxMovieCount = ref(7);
+                let showMessage = ref(false);
                 let movies= reactive([
                     { id: 1, title: "Movie 1", year: 2020 },
                     { id: 2, title: "Movie 2", year: 2021 },
@@ -96,12 +97,19 @@
                     });
                 });
 
+                watch(()=> movies.length, (newValue, OldValue)=>{
+                    if(newValue > 7){
+                        showMessage.value = true;
+                    }
+                });
+
                 return {
                     movies,
                     newMovie,
                     AddMovie,
                     RemoveMovie,
-                    GetAllMovies
+                    GetAllMovies,
+                    showMessage
                 }
             }
         }).mount("#app");
