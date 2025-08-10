@@ -24,6 +24,21 @@
                         <span class="input-group-text">Phone #</span>
                         <input type="text" class="form-control" v-model.number="formObject.phoneNumber" />
                     </div>
+                    <div class="border p-1">
+                        <label class="form-label p-3">Gender</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="radioButton" 
+                                    v-model="formObject.gender" value="Male">
+                                Male
+                            </input>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="radioButton" 
+                                    v-model="formObject.gender" value="Female">
+                                Female
+                            </input>
+                        </div>
+                    </div>
                     <div class="input-group mb-3">
                         <input type="checkbox" class="form-check-input" v-model="formObject.subscribe" />
                         <span class="form-check-label">&nbsp; Subscribe to Newsletter</span>
