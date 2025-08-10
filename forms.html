@@ -38,6 +38,12 @@
                                 Female
                             </input>
                         </div>
+
+                        <hr>
+                        <select id="gender" class="form-select" v-model="formObject.gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
                     </div>
                     <div class="input-group mb-3">
                         <input type="checkbox" class="form-check-input" v-model="formObject.subscribe" />
