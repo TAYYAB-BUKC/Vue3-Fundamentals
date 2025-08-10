@@ -24,11 +24,22 @@
         </div>
     </body>
     <script>
-        const {createApp} = Vue;
+        const { createApp, reactive } = Vue;
 
         createApp({
             setup(){
 
+                const formObject = reactive({
+                    name: '',
+                    gender: '',
+                    email: '',
+                    phoneNumber: '',
+                    subscribe: false,
+                });
+
+                return{
+                    formObject
+                }
             }
         }).mount("#app");
     </script>
