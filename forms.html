@@ -55,6 +55,13 @@
                     <div class="text-center pb-3">
                         <button class="btn btn-secondary m-2 w-25">Submit</button>
                     </div>
+
+                    <hr>
+                    <div class="text-center pb-3">
+                        <ul>
+                            <li v-for="error in errorList" class="text-danger">{{error}}</li>
+                        </ul>
+                    </div>
                 </div>
             </form>
         </div>
@@ -75,7 +82,22 @@
 
                 let isNameValid = ref(true);
 
+                const errorList = reactive([]);
+
                 function handleSubmit(){
+                    errorList.length = 0;
+                    if(formObject.name.length < 3){
+                        errorList.push("Name should be at least 3 characters long.")
+                    }
+                    
+                    if(formObject.email == null){
+                        errorList.push("Email is required.")
+                    }
+
+                    if(!errorList.length){
+                        alert("Form submitted successfully");
+                    }
+                    
                     console.log(formObject);
                 }
 
@@ -92,7 +114,8 @@
                     formObject,
                     handleSubmit,
                     isNameValid,
-                    ValidateName
+                    ValidateName,
+                    errorList
                 }
             }
         }).mount("#app");
