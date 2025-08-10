@@ -6,7 +6,7 @@
     </head>
     <body>
         <div id="app" class="container">
-            <form @submit.prevent="">
+            <form @submit.prevent="handleSubmit">
                 <div class="bg-info p-5 rounded m-5">
                     <div class="h2 text-center">
                         Learn Vue - Forms
@@ -49,8 +49,13 @@
                     subscribe: false,
                 });
 
+                function handleSubmit(){
+                    console.log(formObject);
+                }
+
                 return{
-                    formObject
+                    formObject,
+                    handleSubmit
                 }
             }
         }).mount("#app");
