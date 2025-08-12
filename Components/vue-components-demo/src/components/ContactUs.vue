@@ -10,5 +10,9 @@
 
 <script setup>
     import { defineProps } from "vue";
-    const props = defineProps({contactName: String, contactPhone: Number, contactEmail: String, ownerName: String});
+    const props = defineProps({contactName: {
+        type:String, required: true, default: 'N/A'
+    }, contactPhone: Number, contactEmail: {
+        type:String, default: 'N/A'
+    }, ownerName: String});
 </script>
