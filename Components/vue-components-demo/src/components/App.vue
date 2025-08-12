@@ -10,8 +10,6 @@
 </template>
 
 <script>
-import ContactUs from './ContactUs.vue';
-
     export default{
         setup(){
             const message = 'Hello World From Vue 3 + VITE';
