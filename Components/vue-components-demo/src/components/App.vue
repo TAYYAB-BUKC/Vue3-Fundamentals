@@ -60,9 +60,12 @@
         }    
     ]);
 
-        function updateFavorite(id, valuesFromChildComponent){
-            console.log(id);
-            console.log(valuesFromChildComponent);
-            return !valuesFromChildComponent[0];
-        }
+    function updateFavorite(id, valuesFromChildComponent){
+        console.log(id);
+        console.log(valuesFromChildComponent);
+        // For Object
+        // return !valuesFromChildComponent[0];
+        // For Array
+        return !valuesFromChildComponent.isFavourite;
+    }
 </script>
