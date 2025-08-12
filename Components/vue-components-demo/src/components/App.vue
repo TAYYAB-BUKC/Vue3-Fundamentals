@@ -6,9 +6,10 @@
         {{message}}
     </div>
     <contact-us></contact-us>
-    <button-counter></button-counter>
+    <buttonCounter></ButtonCounter>
 </template>
 
 <script setup>
+    import ButtonCounter from './ButtonCounter.vue'
     const message = 'Hello World From Vue 3 + VITE';
 </script>
