@@ -1,14 +1,19 @@
 <template>
-    <div class="bg-info rounded p-2 m-2">
+    <div class="bg-info rounded p-2 pb-4 m-2">
         <div class="row">
-            <div class="col-12">
+            <div class="col-6">
                 <h1>Below is the contact information</h1>
                 <p>Name: {{ contactName }}</p>
                 <p>Phone #: +92{{ contactPhone }}</p>
                 <p>Email: {{ contactEmail }}</p>
-                <p v-if="ownerName != ''">*Above contact info belongs to {{ ownerName }}</p>
+            </div>
+            <div class="col-3">
+                <button type="button" :class="[isFavourite ? 'btn btn-danger' : 'btn btn-success']">
+                    {{ isFavourite ? 'Remove From ' : 'Add To '}} Favourite
+                </button>
             </div>
         </div>
+        <span class="float-end small" v-if="ownerName != ''">*Above contact info belongs to {{ ownerName }}</span>
     </div>
 </template>
 
@@ -18,5 +23,5 @@
         type:String, required: true, default: 'N/A'
     }, contactPhone: Number, contactEmail: {
         type:String, default: 'N/A'
-    }, ownerName: String});
+    }, ownerName: String, isFavourite: Boolean});
 </script>

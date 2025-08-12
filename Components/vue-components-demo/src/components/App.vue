@@ -12,7 +12,8 @@
         <div class="row">
             <div class="col-12" v-for="contact in contactList" :key="contact.id">
                 <contact-us :contact-name=contact.name :contact-phone=contact.phone :contact-email=contact.email
-                :owner-name=contact.owner></contact-us>
+                :owner-name=contact.owner
+                :isFavourite=contact.isFavourite></contact-us>
             </div>
         </div>
         <button-counter></button-counter>
@@ -33,21 +34,24 @@
             name: 'Tayyab Arsalan',
             phone: 3409292923,
             email: 'write2tayyabarsalan+vue@gmail.com',
-            owner: ownerName
+            owner: ownerName,
+            isFavourite: true,
         },
         {
             id: 2,
             name: 'Noman Khan',
             phone: 3009461798,
             email: 'noman.khan@gmail.com',
-            owner: ownerName
+            owner: ownerName,
+            isFavourite: true,
         },
         {
             id: 3,
             name: 'Tahir Jaffar',
             phone: 3103549546,
             email: 'tahir.jaffar@gmail.com',
-            owner: ownerName
+            owner: ownerName,
+            isFavourite: true,
         }    
     ]);
 
