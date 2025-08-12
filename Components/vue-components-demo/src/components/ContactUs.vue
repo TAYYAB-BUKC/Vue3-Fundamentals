@@ -1,10 +1,14 @@
 <template>
     <div class="bg-info rounded p-2 m-2">
-        <h1>Below is the contact information</h1>
-        <p>Name: {{ contactName }}</p>
-        <p>Phone #: +92{{ contactPhone }}</p>
-        <p>Email: {{ contactEmail }}</p>
-        <p v-if="ownerName != ''">*Above contact info belongs to {{ ownerName }}</p>
+        <div class="row">
+            <div class="col-12">
+                <h1>Below is the contact information</h1>
+                <p>Name: {{ contactName }}</p>
+                <p>Phone #: +92{{ contactPhone }}</p>
+                <p>Email: {{ contactEmail }}</p>
+                <p v-if="ownerName != ''">*Above contact info belongs to {{ ownerName }}</p>
+            </div>
+        </div>
     </div>
 </template>
 
