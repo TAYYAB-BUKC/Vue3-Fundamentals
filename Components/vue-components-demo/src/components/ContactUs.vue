@@ -8,7 +8,7 @@
                 <p>Email: {{ contactEmail }}</p>
             </div>
             <div class="col-3">
-                <button @click="toggleFavourite" type="button" :class="[isFavourite ? 'btn btn-danger' : 'btn btn-success']">
+                <button @click="emitters('updateFavouriteEmit', {isFavourite: props.isFavourite, name: props.contactName});" type="button" :class="[isFavourite ? 'btn btn-danger' : 'btn btn-success']">
                     {{ isFavourite ? 'Remove From ' : 'Add To '}} Favourite
                 </button>
             </div>
