@@ -6,7 +6,7 @@
         <div>
             {{message}}
         </div>
-        <contact-us></contact-us>
+        <contact-us contact-name="Tayyab Arsalan" contact-phone="+92 340 9292923" contact-email="write2tayyabarsalan+vue@gmail.com"></contact-us>
         <button-counter></button-counter>
     </div>
 </template>

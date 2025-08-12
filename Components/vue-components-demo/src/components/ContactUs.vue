@@ -1,11 +1,13 @@
 <template>
     <div class="bg-info rounded p-2 m-2">
-        <h1>For Contact</h1>
-        <p>Please send an email to {{ contactEmail }}</p>
+        <h1>Below is the contact information</h1>
+        <p>Name: {{ contactName }}</p>
+        <p>Phone #: {{ contactPhone }}</p>
+        <p>Email: {{ contactEmail }}</p>
     </div>
 </template>
 
 <script setup>
-    import { ref } from "vue";
-    const contactEmail = ref('write2tayyabarsalan+vue@gmail.com');
+    import { defineProps } from "vue";
+    const props = defineProps(['contactName', 'contactPhone', 'contactEmail']);
 </script>
