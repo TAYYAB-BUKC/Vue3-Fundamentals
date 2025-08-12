@@ -8,7 +8,7 @@
                 <p>Email: {{ contactEmail }}</p>
             </div>
             <div class="col-3">
-                <button type="button" :class="[isFavourite ? 'btn btn-danger' : 'btn btn-success']">
+                <button @click="toggleFavourite" type="button" :class="[isFavourite ? 'btn btn-danger' : 'btn btn-success']">
                     {{ isFavourite ? 'Remove From ' : 'Add To '}} Favourite
                 </button>
             </div>
@@ -24,4 +24,10 @@
     }, contactPhone: Number, contactEmail: {
         type:String, default: 'N/A'
     }, ownerName: String, isFavourite: Boolean});
+
+    const emitters = defineEmits(['updateFavouriteEmit']);
+
+    function toggleFavourite(){
+        emitters('updateFavouriteEmit');
+    }
 </script>

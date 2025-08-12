@@ -13,7 +13,7 @@
             <div class="col-12" v-for="contact in contactList" :key="contact.id">
                 <contact-us :contact-name=contact.name :contact-phone=contact.phone :contact-email=contact.email
                 :owner-name=contact.owner
-                :isFavourite=contact.isFavourite></contact-us>
+                :isFavourite=contact.isFavourite @updateFavouriteEmit="contact.isFavourite = !contact.isFavourite"></contact-us>
             </div>
         </div>
         <button-counter></button-counter>
