@@ -6,6 +6,7 @@
         {{message}}
     </div>
     <contact-us></contact-us>
+    <button-counter></button-counter>
 </template>
 
 <script>
