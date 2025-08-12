@@ -18,7 +18,7 @@
             <div class="col-12" v-for="contact in contactList" :key="contact.id">
                 <contact-us :contact-name=contact.name :contact-phone=contact.phone :contact-email=contact.email
                 :owner-name=contact.owner
-                :isFavourite=contact.isFavourite @updateFavouriteEmit="contact.isFavourite = updateFavorite($event)"></contact-us>
+                :isFavourite=contact.isFavourite @updateFavouriteEmit="contact.isFavourite = updateFavorite(contact.id, $event)"></contact-us>
             </div>
         </div>
         <button-counter></button-counter>
@@ -60,7 +60,8 @@
         }    
     ]);
 
-        function updateFavorite(valuesFromChildComponent){
+        function updateFavorite(id, valuesFromChildComponent){
+            console.log(id);
             console.log(valuesFromChildComponent);
             return !valuesFromChildComponent[0];
         }
