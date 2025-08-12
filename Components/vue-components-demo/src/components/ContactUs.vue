@@ -4,10 +4,11 @@
         <p>Name: {{ contactName }}</p>
         <p>Phone #: {{ contactPhone }}</p>
         <p>Email: {{ contactEmail }}</p>
+        <p v-if="ownerName != ''">*Above contact info belongs to {{ ownerName }}</p>
     </div>
 </template>
 
 <script setup>
     import { defineProps } from "vue";
-    const props = defineProps(['contactName', 'contactPhone', 'contactEmail']);
+    const props = defineProps(['contactName', 'contactPhone', 'contactEmail', 'ownerName']);
 </script>
