@@ -2,11 +2,13 @@
 </style>
 
 <template>
-    <div>
-        {{message}}
+    <div class="container">
+        <div>
+            {{message}}
+        </div>
+        <contact-us></contact-us>
+        <button-counter></button-counter>
     </div>
-    <contact-us></contact-us>
-    <button-counter></button-counter>
 </template>
 
 <script setup>
