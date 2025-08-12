@@ -13,7 +13,7 @@
             <div class="col-12" v-for="contact in contactList" :key="contact.id">
                 <contact-us :contact-name=contact.name :contact-phone=contact.phone :contact-email=contact.email
                 :owner-name=contact.owner
-                :isFavourite=contact.isFavourite @updateFavouriteEmit="contact.isFavourite = !contact.isFavourite"></contact-us>
+                :isFavourite=contact.isFavourite @updateFavouriteEmit="(isFavourite, secondparam) => contact.isFavourite = updateFavorite(isFavourite, secondparam)"></contact-us>
             </div>
         </div>
         <button-counter></button-counter>
@@ -55,4 +55,9 @@
         }    
     ]);
 
+        function updateFavorite(isFavouriteFromChildComponent, secondParamFromChildComponent){
+            console.log(secondParamFromChildComponent);
+            console.log(isFavouriteFromChildComponent);
+            return !isFavouriteFromChildComponent;
+        }
 </script>
