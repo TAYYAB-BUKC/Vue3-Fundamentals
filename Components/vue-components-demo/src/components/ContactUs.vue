@@ -28,6 +28,6 @@
     const emitters = defineEmits(['updateFavouriteEmit']);
 
     function toggleFavourite(){
-        emitters('updateFavouriteEmit', props.isFavourite, 'secondParam');
+        emitters('updateFavouriteEmit', [props.isFavourite, props.contactName]);
     }
 </script>
