@@ -32,7 +32,7 @@
 </template>
 
 <script setup>
-    import { ref, reactive } from 'vue';
+    import { ref, reactive, provide } from 'vue';
     import ContactUs from './ContactUs.vue';
     import ButtonCounter from './ButtonCounter.vue';
     import AddContact from './AddContact.vue';
@@ -40,6 +40,9 @@
     const message = 'Hello World From Vue 3 + VITE';
     const ownerName = ref('Tayyab Arsalan');
     const maximumLuckyNumber = ref(1000);
+
+    provide('maximumLuckyNumber', maximumLuckyNumber);
+    
     const contactList = reactive([
         {
             id: 1,

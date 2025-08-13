@@ -8,16 +8,13 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue';
+    import { ref, inject } from 'vue';
 
     let luckyNumber = ref(0);
 
-    const props = defineProps({
-        maxNumber: { type: Number, default: 100 }
-    });
-
+    const maxNumber = inject('maximumLuckyNumber');
 
     function generateLuckyNumber(){
-        luckyNumber.value = Math.floor(Math.random() * props.maxNumber);
+        luckyNumber.value = Math.floor(Math.random() * maxNumber.value);
     }
 </script>
