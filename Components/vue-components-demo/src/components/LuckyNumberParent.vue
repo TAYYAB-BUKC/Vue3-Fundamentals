@@ -1,4 +1,7 @@
-<style>
+<style scoped>
+    div{
+        background-color: rgb(13 202 240);
+    }
 </style>
 
 <template>
