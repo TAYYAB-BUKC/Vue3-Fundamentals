@@ -5,6 +5,8 @@
     <div class="container">
         <div class="text-center">
             <slot></slot>
+            <slot name="moreInfo"></slot>
+            <slot name="buttonSlot"></slot>
             <button class="btn btn-primary m-2" @click="newVersion = !newVersion">Toggle Components</button>
             <br>
             <button class="btn btn-primary m-2" @click="newVersion = false">Lucky Number v1</button>

@@ -16,9 +16,15 @@
         <div>
             <lucky-number-parent>
                 <p class="pt-2">We have two versions for Lucky Number</p>
-                <p>Click the buttons to toggle between the two versions for Lucky Number</p>
-                <button class="btn btn-primary" @click="slotMessage = 'I am the property of the parent component even though you are using me using slots.'">Show Message</button>
+                
+                <template v-slot:moreInfo>
+                    <p>Click the buttons to toggle between the two versions for Lucky Number</p>
+                </template>
+
+                <template v-slot:buttonSlot>
+                    <button class="btn btn-primary" @click="slotMessage = 'I am the property of the parent component even though you are using me using slots.'">Show Message</button>
                 <p class="text-success">{{ slotMessage }}</p>
+                </template>
             </lucky-number-parent>
         </div>
 
