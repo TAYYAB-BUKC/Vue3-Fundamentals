@@ -12,6 +12,9 @@
                     {{ isFavourite ? 'Remove From ' : 'Add To '}} Favourite
                 </button>
             </div>
+            <div class="col-3">
+                <lucky-number :maxNumber="1000"></lucky-number>
+            </div>
         </div>
         <span class="float-end small" v-if="ownerName != ''">*Above contact info belongs to {{ ownerName }}</span>
     </div>
@@ -19,6 +22,8 @@
 
 <script setup>
     import { defineProps } from "vue";
+    import LuckyNumber from './LuckyNumber.vue';
+
     const props = defineProps({contactName: {
         type:String, required: true, default: 'N/A'
     }, contactPhone: Number, contactEmail: {
