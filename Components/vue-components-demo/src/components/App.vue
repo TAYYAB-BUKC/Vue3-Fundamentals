@@ -17,6 +17,8 @@
             <lucky-number-parent>
                 <p class="pt-2">We have two versions for Lucky Number</p>
                 <p>Click the buttons to toggle between the two versions for Lucky Number</p>
+                <button class="btn btn-primary" @click="slotMessage = 'I am the property of the parent component even though you are using me using slots.'">Show Message</button>
+                <p class="text-success">{{ slotMessage }}</p>
             </lucky-number-parent>
         </div>
 
@@ -54,6 +56,8 @@
     const maximumLuckyNumber = ref(1000);
 
     const newVersion = ref(false);
+
+    const slotMessage = ref('');
 
     const luckyNumbercomponent = computed(() => {
         return newVersion.value ? LuckyNumberv2 : LuckyNumber;
