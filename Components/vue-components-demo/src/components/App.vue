@@ -19,7 +19,9 @@
             <button class="btn btn-primary m-2" @click="newVersion = false">Lucky Number v1</button>
             <button class="btn btn-primary m-2" @click="newVersion = true">Lucky Number v2</button>
             <br>
-            <component :is="luckyNumbercomponent"></component>
+            <keep-alive>
+                <component :is="luckyNumbercomponent"></component>
+            </keep-alive>
         </div>
 
         <div class="row">
