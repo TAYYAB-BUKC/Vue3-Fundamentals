@@ -19,7 +19,8 @@
                 :isFavourite=contact.isFavourite @updateFavouriteEmit="(isFavourite, secondparam) => contact.isFavourite = updateFavorite(isFavourite, secondparam)"></contact-us>
             </div> -->
             <!-- <add-contact @addContactEmit="addContact($event)"></add-contact> -->
-            <AddContact @add-contact-emit="addContact($event)" ></AddContact>
+            <!-- <AddContact @add-contact-emit="addContact($event)" ></AddContact> -->
+            <AddContact :onAddContact="addContact" ></AddContact>
             <div class="col-12" v-for="contact in contactList" :key="contact.id">
                 <contact-us :contact-name=contact.name :contact-phone=contact.phone :contact-email=contact.email
                 :owner-name=contact.owner
@@ -42,7 +43,7 @@
     const maximumLuckyNumber = ref(1000);
 
     provide('maximumLuckyNumber', maximumLuckyNumber);
-    
+
     const contactList = reactive([
         {
             id: 1,

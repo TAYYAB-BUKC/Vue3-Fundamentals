@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue';
+import { reactive, defineProps } from 'vue';
 
 const contact = reactive({
     name:'',
@@ -39,10 +39,14 @@ const contact = reactive({
 });
 
 const emit = defineEmits(['addContactEmit']);
+const props = defineProps({
+    onAddContact: Function
+});
 
 function handleSubmit(){
     console.log(contact);
-    emit('addContactEmit', contact);
+    // emit('addContactEmit', contact);
+    props.onAddContact(contact);
     contact.name = '';
     contact.email = '';
     contact.phone = '';   
