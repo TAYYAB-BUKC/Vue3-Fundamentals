@@ -13,10 +13,13 @@
             Max. LuckyNumber: <input type="text" v-model="maximumLuckyNumber" />
         </div>
 
-        <div>
-            <lucky-number></lucky-number>
+        <div class="text-center">
+            <button class="btn btn-primary m-2" @click="newVersion = !newVersion">Toggle Components</button>
             <br>
-            <lucky-numberv2></lucky-numberv2>
+            <button class="btn btn-primary m-2" @click="newVersion = false">Lucky Number v1</button>
+            <button class="btn btn-primary m-2" @click="newVersion = true">Lucky Number v2</button>
+            <br>
+            <component :is="luckyNumbercomponent"></component>
         </div>
 
         <div class="row">
@@ -40,7 +43,7 @@
 </template>
 
 <script setup>
-    import { ref, reactive, provide } from 'vue';
+    import { ref, reactive, provide, computed } from 'vue';
     import ContactUs from './ContactUs.vue';
     import ButtonCounter from './ButtonCounter.vue';
     import AddContact from './AddContact.vue';
@@ -50,6 +53,12 @@
     const message = 'Hello World From Vue 3 + VITE';
     const ownerName = ref('Tayyab Arsalan');
     const maximumLuckyNumber = ref(1000);
+
+    const newVersion = ref(false);
+
+    const luckyNumbercomponent = computed(() => {
+        return newVersion.value ? LuckyNumberv2 : LuckyNumber;
+    });
 
     provide('maximumLuckyNumber', maximumLuckyNumber);
 
