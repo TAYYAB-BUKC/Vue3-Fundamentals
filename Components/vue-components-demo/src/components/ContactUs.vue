@@ -13,7 +13,7 @@
                 </button>
             </div>
             <div class="col-3">
-                <lucky-number :maxNumber="maxLuckyNumber"></lucky-number>
+                <lucky-number></lucky-number>
             </div>
         </div>
         <span class="float-end small" v-if="ownerName != ''">*Above contact info belongs to {{ ownerName }}</span>
@@ -28,7 +28,7 @@
         type:String, required: true, default: 'N/A'
     }, contactPhone: Number, contactEmail: {
         type:String, default: 'N/A'
-    }, ownerName: String, isFavourite: Boolean, maxLuckyNumber: Number});
+    }, ownerName: String, isFavourite: Boolean});
 
     const emitters = defineEmits(['updateFavouriteEmit']);
 

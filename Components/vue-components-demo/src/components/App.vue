@@ -24,7 +24,7 @@
                 <contact-us :contact-name=contact.name :contact-phone=contact.phone :contact-email=contact.email
                 :owner-name=contact.owner
                 :isFavourite=contact.isFavourite 
-                @updateFavouriteEmit="contact.isFavourite = updateFavorite(contact.id, $event)" :maxLuckyNumber="maximumLuckyNumber"></contact-us>
+                @updateFavouriteEmit="contact.isFavourite = updateFavorite(contact.id, $event)"></contact-us>
             </div>
         </div>
         <button-counter></button-counter>
