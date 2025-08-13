@@ -12,6 +12,13 @@
         <div>
             Max. LuckyNumber: <input type="text" v-model="maximumLuckyNumber" />
         </div>
+
+        <div>
+            <lucky-number></lucky-number>
+            <br>
+            <lucky-numberv2></lucky-numberv2>
+        </div>
+
         <div class="row">
             <!-- <div class="col-12" v-for="contact in contactList" :key="contact.id">
                 <contact-us :contact-name=contact.name :contact-phone=contact.phone :contact-email=contact.email
@@ -37,6 +44,8 @@
     import ContactUs from './ContactUs.vue';
     import ButtonCounter from './ButtonCounter.vue';
     import AddContact from './AddContact.vue';
+    import LuckyNumber from './LuckyNumber.vue';
+    import LuckyNumberv2 from './LuckyNumberv2.vue';
 
     const message = 'Hello World From Vue 3 + VITE';
     const ownerName = ref('Tayyab Arsalan');
