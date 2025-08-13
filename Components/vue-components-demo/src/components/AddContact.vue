@@ -18,11 +18,11 @@
                 <input type="text" class="form-control" v-model.number="contact.phone" />
             </div>
             <div class="input-group mb-3">
-                <input type="checkbox" class="form-check-input" v-model="contact.isFavourtie" />
+                <input type="checkbox" class="form-check-input" v-model="contact.isFavourite" />
                 <span class="form-check-label">&nbsp; Is Favourtie</span>
             </div>
             <div class="text-center pb-3">
-                <button class="btn btn-primary m-2 w-25">Add </button>
+                <button class="btn btn-primary m-2 w-25">Add</button>
             </div>
         </div>
     </form>
@@ -35,7 +35,7 @@ const contact = reactive({
     name:'',
     email: '',
     phone: '',
-    isFavourtie: false
+    isFavourite: false
 });
 
 function handleSubmit(){
@@ -43,6 +43,6 @@ function handleSubmit(){
     contact.name = '';
     contact.email = '';
     contact.phone = '';   
-    contact.isFavourtie = false;
+    contact.isFavourite = false;
 }
 </script>
