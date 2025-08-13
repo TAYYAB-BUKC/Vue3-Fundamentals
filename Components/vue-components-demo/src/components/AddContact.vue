@@ -38,8 +38,11 @@ const contact = reactive({
     isFavourite: false
 });
 
+const emit = defineEmits(['addContactEmit']);
+
 function handleSubmit(){
     console.log(contact);
+    emit('addContactEmit', contact);
     contact.name = '';
     contact.email = '';
     contact.phone = '';   
