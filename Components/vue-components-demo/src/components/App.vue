@@ -7,7 +7,10 @@
             {{message}}
         </div>
         <div>
-            <input type="text" v-model="ownerName" />
+            Owner Name: <input type="text" v-model="ownerName" />
+        </div>
+        <div>
+            Max. LuckyNumber: <input type="text" v-model="maximumLuckyNumber" />
         </div>
         <div class="row">
             <!-- <div class="col-12" v-for="contact in contactList" :key="contact.id">
@@ -20,7 +23,8 @@
             <div class="col-12" v-for="contact in contactList" :key="contact.id">
                 <contact-us :contact-name=contact.name :contact-phone=contact.phone :contact-email=contact.email
                 :owner-name=contact.owner
-                :isFavourite=contact.isFavourite @updateFavouriteEmit="contact.isFavourite = updateFavorite(contact.id, $event)"></contact-us>
+                :isFavourite=contact.isFavourite 
+                @updateFavouriteEmit="contact.isFavourite = updateFavorite(contact.id, $event)" :maxLuckyNumber="maximumLuckyNumber"></contact-us>
             </div>
         </div>
         <button-counter></button-counter>
@@ -35,7 +39,7 @@
 
     const message = 'Hello World From Vue 3 + VITE';
     const ownerName = ref('Tayyab Arsalan');
-
+    const maximumLuckyNumber = ref(1000);
     const contactList = reactive([
         {
             id: 1,
