@@ -15,6 +15,7 @@
                 :owner-name=contact.owner
                 :isFavourite=contact.isFavourite @updateFavouriteEmit="(isFavourite, secondparam) => contact.isFavourite = updateFavorite(isFavourite, secondparam)"></contact-us>
             </div> -->
+            <add-contact></add-contact>
             <div class="col-12" v-for="contact in contactList" :key="contact.id">
                 <contact-us :contact-name=contact.name :contact-phone=contact.phone :contact-email=contact.email
                 :owner-name=contact.owner
@@ -29,6 +30,7 @@
     import { ref, reactive } from 'vue';
     import ContactUs from './ContactUs.vue';
     import ButtonCounter from './ButtonCounter.vue';
+    import AddContact from './AddContact.vue';
 
     const message = 'Hello World From Vue 3 + VITE';
     const ownerName = ref('Tayyab Arsalan');
