@@ -9,7 +9,7 @@
     import { onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from "vue";
     import { useCounter } from "@/composibles/useCounter";
 
-    const { counter, increment, decrement } = useCounter();
+    const { counter, increment, decrement } = useCounter(1000);
 
     onBeforeMount(() =>{
         console.log('ButtonCounter.vue - onBeforeMount');
