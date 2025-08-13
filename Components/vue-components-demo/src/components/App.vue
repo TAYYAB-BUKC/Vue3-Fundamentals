@@ -45,11 +45,13 @@
             </div>
         </div>
         <button-counter></button-counter>
+        <button-counter v-if="ownerName == 'Ultimate Tayyab Arsalan'"></button-counter>
     </div>
 </template>
 
 <script setup>
     import { ref, reactive, provide, computed } from 'vue';
+    import { onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'vue';
     import ContactUs from './ContactUs.vue';
     import ButtonCounter from './ButtonCounter.vue';
     import AddContact from './AddContact.vue';
@@ -123,4 +125,28 @@
         contactList.push(newContact);
         //contactList.push(contact);
     }
+
+    onBeforeMount(() =>{
+        console.log('App.vue - onBeforeMount');
+    });
+
+    onMounted(() =>{
+        console.log('App.vue - onMounted');
+    });
+
+    onBeforeUpdate(() =>{
+        console.log('App.vue - onBeforeUpdate');
+    });
+
+    onUpdated(() =>{
+        console.log('App.vue - onUpdated');
+    });
+
+    onBeforeUnmount(() =>{
+        console.log('App.vue - onBeforeUnmount');
+    });
+
+    onUnmounted(() =>{
+        console.log('App.vue - onUnMounted');
+    });
 </script>

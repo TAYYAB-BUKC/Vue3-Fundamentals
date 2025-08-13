@@ -4,6 +4,30 @@
 </template>
 
 <script setup>
-    import { ref } from "vue";
+    import { ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from "vue";
     const counter = ref(0);
+
+    onBeforeMount(() =>{
+        console.log('ButtonCounter.vue - onBeforeMount');
+    });
+
+    onMounted(() =>{
+        console.log('ButtonCounter.vue - onMounted');
+    });
+
+    onBeforeUpdate(() =>{
+        console.log('ButtonCounter.vue - onBeforeUpdate');
+    });
+
+    onUpdated(() =>{
+        console.log('ButtonCounter.vue - onUpdated');
+    });
+
+    onBeforeUnmount(() =>{
+        console.log('ButtonCounter.vue - onBeforeUnmount');
+    });
+
+    onUnmounted(() =>{
+        console.log('ButtonCounter.vue - onUnMounted');
+    });
 </script>
