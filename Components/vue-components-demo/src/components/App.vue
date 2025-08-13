@@ -14,7 +14,10 @@
         </div>
 
         <div>
-            <lucky-number-parent></lucky-number-parent>
+            <lucky-number-parent>
+                <p class="pt-2">We have two versions for Lucky Number</p>
+                <p>Click the buttons to toggle between the two versions for Lucky Number</p>
+            </lucky-number-parent>
         </div>
 
         <div class="row">
