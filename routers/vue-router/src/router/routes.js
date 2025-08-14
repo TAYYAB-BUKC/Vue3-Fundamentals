@@ -11,6 +11,7 @@ const router = createRouter({
         { path: '/home', component: home, name: 'advanceHome' },
         { path: '/contact', component: contact, name: 'contact' },
         { path: '/contactus', component: contact, name: 'contactUs' },
+        { path: '/contact-us', redirect: { name: 'contactUs' } },
         { path: '/products', component: productList, name: 'products' },
         { path: '/product/list', component: productList, name: 'productList' },
         { path: '/product/details/:productId/:categoryId?', component: productDetail, name: 'productDetailWithParams' },
