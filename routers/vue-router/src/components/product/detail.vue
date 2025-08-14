@@ -12,6 +12,8 @@
     <div v-else>
         <h1>No Category ID found.</h1>
     </div>
+
+    <button class="btn btn-primary" @click="$router.go(-1)">Back to List</button>
 </template>
 
 <script setup>
