@@ -7,14 +7,14 @@ import productDetail from '@/components/product/detail.vue';
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
-        { path: '/', component: home },
-        { path: '/home', component: home },
-        { path: '/contact', component: contact },
-        { path: '/contactus', component: contact },
-        { path: '/products', component: productList },
-        { path: '/product/list', component: productList },
-        { path: '/product/details/:productId/:categoryId?', component: productDetail },
-        { path: '/product/details/', component: productDetail },
+        { path: '/', component: home, name: 'basicHome' },
+        { path: '/home', component: home, name: 'advanceHome' },
+        { path: '/contact', component: contact, name: 'contact' },
+        { path: '/contactus', component: contact, name: 'contactUs' },
+        { path: '/products', component: productList, name: 'products' },
+        { path: '/product/list', component: productList, name: 'productList' },
+        { path: '/product/details/:productId/:categoryId?', component: productDetail, name: 'productDetailWithParams' },
+        { path: '/product/details/', component: productDetail, name: 'productDetailWithNoParams' },
     ]
 });
 
