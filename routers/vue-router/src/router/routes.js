@@ -14,6 +14,7 @@ const router = createRouter({
         { path: '/products', component: productList },
         { path: '/product/list', component: productList },
         { path: '/product/details/:productId', component: productDetail },
+        { path: '/product/details/', component: productDetail },
     ]
 });
 

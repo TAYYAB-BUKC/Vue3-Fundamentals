@@ -1,6 +1,11 @@
 <template>
     <h1>Product Detail</h1>
-    <h1>Product ID: {{ route.params.productId }}</h1>
+    <div v-if="route.params.productId">
+        <h1>Product ID: {{ route.params.productId }}</h1>
+    </div>
+    <div v-else>
+        <h1>No Product ID found.</h1>
+    </div>
 </template>
 
 <script setup>
