@@ -4,6 +4,7 @@ import contact from '@/components/home/contact.vue';
 import productList from '@/components/product/list.vue'
 import productDetail from '@/components/product/detail.vue';
 import notFound from '@/components/layout/not-found.vue';
+import login from '@/components/authentication/login.vue';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,6 +18,7 @@ const router = createRouter({
         { path: '/product/list', component: productList, name: 'productList' },
         { path: '/product/details/:productId/:categoryId?', component: productDetail, name: 'productDetailWithParams' },
         { path: '/product/details/', component: productDetail, name: 'productDetailWithNoParams' },
+        { path: '/login', component: login, name: 'login' },
         { path: '/:catchAll(.*)', component: notFound }
     ]
 });
@@ -30,6 +32,13 @@ router.beforeEach((toURL, fromURL)=>{
 
     // If you need to stop navigation then uncomment below line
     // return false;
+
+    
+    // Restrict Unauthorized Access
+    const isAuthenticated = false;
+    if(!isAuthenticated && toURL.name != 'login' && toURL.name != 'basicHome'){
+        return { name: 'login' };
+    }
 });
 
 export default router;
