@@ -21,4 +21,15 @@ const router = createRouter({
     ]
 });
 
+// Global Navigation Guard
+router.beforeEach((toURL, fromURL)=>{
+    console.log('toURL:');
+    console.log(toURL);
+    console.log('fromURL');
+    console.log(fromURL);
+
+    // If you need to stop navigation then uncomment below line
+    // return false;
+});
+
 export default router;
