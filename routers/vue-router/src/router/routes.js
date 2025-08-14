@@ -13,7 +13,7 @@ const router = createRouter({
         { path: '/contactus', component: contact },
         { path: '/products', component: productList },
         { path: '/product/list', component: productList },
-        { path: '/product/details/:productId', component: productDetail },
+        { path: '/product/details/:productId/:categoryId?', component: productDetail },
         { path: '/product/details/', component: productDetail },
     ]
 });

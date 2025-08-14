@@ -6,6 +6,12 @@
     <div v-else>
         <h1>No Product ID found.</h1>
     </div>
+    <div v-if="route.params.categoryId">
+        <h1>Category ID: {{ route.params.categoryId }}</h1>
+    </div>
+    <div v-else>
+        <h1>No Category ID found.</h1>
+    </div>
 </template>
 
 <script setup>
