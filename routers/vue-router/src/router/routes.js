@@ -3,6 +3,7 @@ import home from '@/components/home/home.vue';
 import contact from '@/components/home/contact.vue';
 import productList from '@/components/product/list.vue'
 import productDetail from '@/components/product/detail.vue';
+import notFound from '@/components/layout/not-found.vue';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,6 +17,7 @@ const router = createRouter({
         { path: '/product/list', component: productList, name: 'productList' },
         { path: '/product/details/:productId/:categoryId?', component: productDetail, name: 'productDetailWithParams' },
         { path: '/product/details/', component: productDetail, name: 'productDetailWithNoParams' },
+        { path: '/:catchAll(.*)', component: notFound }
     ]
 });
 
