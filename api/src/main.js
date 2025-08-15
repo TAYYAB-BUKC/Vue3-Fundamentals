@@ -1,4 +1,10 @@
 import { createApp } from 'vue'
 import App from './components/App.vue'
+import Loader from './components/Loader.vue';
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+// Global Components Registration
+app.component('Loader', Loader);
+
+app.mount('#app');
