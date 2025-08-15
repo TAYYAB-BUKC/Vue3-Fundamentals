@@ -17,10 +17,20 @@
   let users = reactive([]);
 
   onMounted(() => {
-    axios.get('https://jsonplaceholder.typicode.com/users')
-         .then((response) => {
-            console.log(response);  
-            users.push(...response.data);
+    // axios.get('https://jsonplaceholder.typicode.com/users')
+    //      .then((response) => {
+    //         console.log(response);  
+    //         users.push(...response.data);
+    //      }).catch((error) => {
+    //         console.log('Error Occured');  
+    //         console.log(error);
+    //      });
+
+    fetch('https://jsonplaceholder.typicode.com/users')
+         .then((response) => response.json())
+         .then((data) => {
+            console.log(data);  
+            users.push(...data);
          }).catch((error) => {
             console.log('Error Occured');  
             console.log(error);
