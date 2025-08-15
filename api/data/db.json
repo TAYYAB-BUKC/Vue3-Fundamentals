@@ -1,0 +1,39 @@
+{
+  "destination": [
+    {
+      "id": 1,
+      "name": "Bangkok",
+      "days": "5",
+      "price": 1000,
+      "funFact": "Bangkok is the capital and most populous city of Thailand. It is known in Thai as Krung Thep Maha Nakhon or simply Krung Thep."
+    },
+    {
+      "id": 2,
+      "name": "Phuket",
+      "days": 5,
+      "funFact": "Phuket is a city in Thailand, formerly known as Thalang. It is the capital of Phuket Province.",
+      "price": 800
+    },
+    {
+      "id": 3,
+      "name": "Pattaya",
+      "days": 3,
+      "funFact": "Pattaya is a city on Thailand’s eastern Gulf coast known for its beaches. A quiet fishing village as recently as the 1960s.",
+      "price": 500
+    },
+    {
+      "id": 4,
+      "name": "Chiang Mai",
+      "days": 4,
+      "funFact": "Chiang Mai is a city in mountainous northern Thailand. Founded in 1296, it was capital of the independent Lanna Kingdom until 1558.",
+      "price": 600
+    },
+    {
+      "id": 5,
+      "name": "Chicago",
+      "days": "5",
+      "price": 700,
+      "funFact": ""
+    }
+  ]
+}
