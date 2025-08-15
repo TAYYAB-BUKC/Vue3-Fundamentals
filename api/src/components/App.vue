@@ -4,12 +4,14 @@
   <div>
     <h1 class="text-primary text-center">Learn Vue - API Request</h1>
   </div>
-  <!-- <hr>
-  <div v-for="user in users" :key="user.id">
-    <p>{{ user.name }}</p>
-    <p>{{ user.email }}</p>
+  <div v-if="users.length > 0">
     <hr>
-  </div> -->
+    <div v-for="user in users" :key="user.id">
+      <p>{{ user.name }}</p>
+      <p>{{ user.email }}</p>
+      <hr>
+    </div>
+  </div>
   <div class="container p-4">
     <div>
       <h1 class="text-success text-center">TravelOPedia</h1>
@@ -39,28 +41,40 @@
   let destinations = reactive([]);
 
   onMounted(() => {
-    // axios.get('https://jsonplaceholder.typicode.com/users')
-    //      .then((response) => {
-    //         console.log(response);  
-    //         users.push(...response.data);
-    //      }).catch((error) => {
-    //         console.log('Error Occured');  
-    //         console.log(error);
-    //      });
-
-    // fetch('https://jsonplaceholder.typicode.com/users')
-    //      .then((response) => response.json())
-    //      .then((data) => {
-    //         console.log(data);  
-    //         users.push(...data);
-    //      }).catch((error) => {
-    //         console.log('Error Occured');  
-    //         console.log(error);
-    //      });
-
+    //LoadUsersWithAxios();
+    
     // console.log('users');
     // console.log(users);
+    
+    //LoadUsersWithFetch();
 
+    LoadDestinationsWithAxios();
+  });
+
+  function LoadUsersWithAxios(){
+    axios.get('https://jsonplaceholder.typicode.com/users')
+         .then((response) => {
+            console.log(response);  
+            users.push(...response.data);
+         }).catch((error) => {
+            console.log('Error Occured');  
+            console.log(error);
+         });
+  }
+
+  function LoadUsersWithFetch(){
+    fetch('https://jsonplaceholder.typicode.com/users')
+         .then((response) => response.json())
+         .then((data) => {
+            console.log(data);  
+            users.push(...data);
+         }).catch((error) => {
+            console.log('Error Occured');  
+            console.log(error);
+         });
+  }
+
+  function LoadDestinationsWithAxios(){
     axios.get('http://localhost:3000/destination')
          .then((response) => {
             console.log(response);  
@@ -69,5 +83,5 @@
             console.log('Error Occured');  
             console.log(error);
          });
-  });
+  }
 </script>
