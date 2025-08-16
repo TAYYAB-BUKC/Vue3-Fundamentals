@@ -13,13 +13,13 @@
         <br>
         <div class="row" style="display: flex;justify-content: center;">
             <div class="col-5 m-5">
-                <button class="form-control btn btn-success p-4">Increment</button>
+                <button class="form-control btn btn-success p-4" @click="Increment">Increment</button>
             </div>
             <div class="col-5 m-5">
-                <button class="form-control btn btn-danger p-4">Decrement</button>
+                <button class="form-control btn btn-danger p-4" @click="Decrement">Decrement</button>
             </div>
             <div class="col-6 pt-4" >
-                <button class="form-control btn btn-primary p-4">Random</button>
+                <button class="form-control btn btn-primary p-4" @click="Random">Random</button>
             </div>
         </div>
     </div>
@@ -28,4 +28,16 @@
 <script setup>
     import { useGameStore } from '@/stores/gameStores';
     const gameStore = useGameStore();
+
+    function Increment(){
+        gameStore.score += Math.floor( Math.random() * 30) + 1;
+    }
+
+    function Decrement(){
+        gameStore.score -= Math.floor( Math.random() * 30) + 1;
+    }
+
+    function Random(){
+        Math.random() > 0.5 ? Increment() : Decrement();
+    }
 </script>
