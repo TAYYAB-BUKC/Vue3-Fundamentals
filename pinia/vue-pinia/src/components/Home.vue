@@ -7,7 +7,7 @@
         <h2 class="text-success">LET'S PLAY THE GAME</h2>
 
         <div>
-            <h3 class="text-primary pb-3">Current Score: {{ gameStore.score }}</h3>
+            <h3 class="text-primary pb-3">Current Score: {{ gameStore.getScore }}</h3>
             <h3 class="text-primary pb-3">Max Score: {{ gameStore.maxHealth }}</h3>
         </div>
         <br>
@@ -30,11 +30,11 @@
     const gameStore = useGameStore();
 
     function Increment(){
-        gameStore.score += Math.floor( Math.random() * 30) + 1;
+        gameStore.score += gameStore.getNextAttack;
     }
 
     function Decrement(){
-        gameStore.score -= Math.floor( Math.random() * 30) + 1;
+        gameStore.score -= gameStore.getNextDefense;
     }
 
     function Random(){
