@@ -30,11 +30,11 @@
     const gameStore = useGameStore();
 
     function Increment(){
-        gameStore.score += gameStore.getNextAttack;
+        gameStore.score = gameStore.getNextAttackWithCacheHack;
     }
 
     function Decrement(){
-        gameStore.score -= gameStore.getNextDefense;
+        gameStore.score = gameStore.getNextDefenseWithCacheHack;
     }
 
     function Random(){
