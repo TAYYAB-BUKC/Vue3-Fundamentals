@@ -31,5 +31,17 @@ export const useGameStore = defineStore('GameStore', {
             console.log('NextDefense: ' + defense);
             return this.score - defense;
         }
+    },
+    actions:{
+        setNextAttack() {
+            let attack = Math.floor(Math.random() * this.maxAttack) + 1;
+            console.log('NextAttack: ' + attack);
+            this.score += attack;
+        },
+        setNextDefense() {
+            let defense = Math.floor(Math.random() * this.maxDefense) + 1;
+            console.log('NextDefense: ' + defense);
+            this.score -= defense;
+        },
     }
 })
