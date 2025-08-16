@@ -1,11 +1,23 @@
-<script setup></script>
+<style scoped></style>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div class="text-center text-success pt-3 h3">
+    Count Engine
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-4 offset-1">
+      <router-link :to="{ name: 'home' }" class="form-control badge rounded-pill text-bg-warning p-4">
+        Home
+      </router-link>
+    </div>
+    <div class="col-4 offset-1">
+      <router-link :to="{ name: 'info' }" class="form-control badge rounded-pill text-bg-warning p-4">
+        Info
+      </router-link>
+    </div>
+  </div>
+  <router-view></router-view>
 </template>
 
-<style scoped></style>
+<script setup></script>
