@@ -10,14 +10,14 @@
             <h3 class="text-primary pb-3">Current Score: {{ gameStore.getScore }}</h3>
             <h3 class="text-primary pb-3">Max Score: {{ gameStore.maxHealth }}</h3>
         </div>
-        <span class="text-success pb-3 h2" v-if="gameStore.getScore >= 100">
+        <span class="text-success pb-3 h2" v-if="gameStore.getScore >= gameStore.maxHealth">
             CONGRATULATIONS! YOU WON.
         </span>
         <span class="text-danger pb-3 h2" v-if="gameStore.getScore < 0">
             OOPS! YOU LOST.
         </span>
         <br>
-        <div class="row" style="display: flex;justify-content: center;" v-if="gameStore.getScore < 100 && gameStore.getScore > -1">
+        <div class="row" style="display: flex;justify-content: center;" v-if="gameStore.getScore < gameStore.maxHealth && gameStore.getScore > -1">
             <div class="col-5 m-5">
                 <button class="form-control btn btn-success p-4" @click="Increment">Increment</button>
             </div>
